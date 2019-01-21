@@ -10,7 +10,8 @@
 
 float IndexMatrix[4][4];
 bool Imaginary;
-
+float det=0;
+int rankQM=0, rankIM=0;
 
 
 MainWindow::MainWindow(QWidget *parent) :
@@ -39,8 +40,12 @@ float ExamineSurfaceType()
 {
     float a[4][4];
     int type=0;
-    float det=0, detp1=0, detp2=0, detp3=0, detp4=0;
-    int rankIM=0,rankQM=0;
+    float detp1=0, detp2=0, detp3=0, detp4=0;
+
+
+    rankQM=0;
+    rankIM=0;
+    det=0;
 
     for (int i=0; i<4; i++)
     {
@@ -58,7 +63,119 @@ float ExamineSurfaceType()
     det=a[0][0]*detp1-a[0][1]*detp2+a[0][2]*detp3-a[0][3]*detp4;
     //det!=0 => ранг определителя IM 4
 
-    return det;
+    bool f=false;
+
+    //Full Index Matrix rank
+
+    if (det!=0) {rankIM=4;} else
+    {
+
+        for (int i=0; i<4; i++)
+        {
+            for (int j=0; j<4; j++)
+            {
+                if (a[i][j]!=0) {rankIM=1;f=true; break;}
+            }
+            if (f) {break;}
+        }
+        if (f)
+        {
+            f=false;
+
+            for (int i1=0; i1<3; i1++)
+            {
+                for (int i2=0; i2<3; i2++)
+                {
+                    for (int i3=i1+1; i3<4; i3++)
+                    {
+                        for (int i4=i2+1; i4<4; i4++)
+                        {
+                            if ((a[i1][i2]*a[i3][i4]-a[i3][i1]*a[i1][i4])!=0) {rankIM=2; f=true; break;}
+                        }
+                        if (f) {break;}
+                    }
+                    if (f) {break;}
+                }
+            }
+        }
+        if (f)
+        {
+            f=false;
+
+
+            for (int i1=0; i1<4; i1++)
+            {
+                for (int i2=0; i2<4; i2++)
+                {
+                    for (int i3=i1+1; i3<4; i3++)
+                    {
+                        for (int i4=i2+1; i4<4; i4++)
+                        {
+                            for (int i5=i3+1; i5<4; i5++)
+                            {
+                                for (int i6=i4+1; i6<4; i6++)
+                                {
+                                    if ((a[i1][i2]*a[i3][i4]*a[i5][i6]+a[i3][i2]*a[i5][i4]*a[i1][i6]+a[i1][i4]*a[i3][i6]*a[i5][i2]-a[i5][i2]*a[i3][i4]*a[i1][i6]-a[i5][i4]*a[i3][i6]*a[i1][i2]-a[i3][i2]*a[i1][i4]*a[i5][i6])!=0) {rankIM=3; f=true; break;
+                                    }
+                                }
+                                if (f) {break;}
+                            }
+                            if (f) {break;}
+                        }
+                        if (f) {break;}
+                    }
+                    if (f) {break;}
+                }
+                if (f) {break;}
+            }
+        }
+
+        //Quadric matrix rank
+
+        if ((a[0][0]*a[1][1]*a[2][2]+a[1][0]*a[2][1]*a[0][2]+a[0][1]*a[1][2]*a[2][0]-a[2][0]*a[1][1]*a[0][2]-a[0][0]*a[2][1]*a[1][2]-a[2][2]*a[1][0]*a[0][1])!=0) {rankQM=3;} else
+        {
+
+        for (int i=0; i<3; i++)
+        {
+            for (int j=0; j<3; j++)
+            {
+                if (a[i][j]!=0) {rankQM=1;f=true; break;}
+            }
+            if (f) {break;}
+        }
+        if (f)
+        {
+            f=false;
+
+            for (int i1=0; i1<2; i1++)
+            {
+                for (int i2=0; i2<2; i2++)
+                {
+                    for (int i3=i1+1; i3<3; i3++)
+                    {
+                        for (int i4=i2+1; i4<3; i4++)
+                        {
+                            if ((a[i1][i2]*a[i3][i4]-a[i3][i1]*a[i1][i4])!=0) {rankQM=2; f=true; break;}
+                        }
+                        if (f) {break;}
+                    }
+                    if (f) {break;}
+                }
+            }
+        }
+        }
+
+    }
+
+    switch ()
+
+
+
+
+
+
+
+    return type;
 }
 
 void MainWindow::on_btnExamine_clicked()
@@ -92,6 +209,12 @@ void MainWindow::on_btnExamine_clicked()
     IndexMatrix[2][3]/=2.0;
     IndexMatrix[3][2]/=2.0;
 
-    QString FullDet = QString::number(ExamineSurfaceType());
-    ui->lblFullDeterminant->setText(FullDet);
+    ExamineSurfaceType();
+
+    QString FullMatrixDet = QString::number(det);
+    ui->lblFullMatrixDet->setText("Определитель матрицы коэфф.: "+FullMatrixDet);
+    QString FullMatrixRank = QString::number(rankIM);
+    ui->lblFullMatrixRank->setText("Ранг матрицы коэффициентов: "+FullMatrixRank);
+    QString QuadricFormMatrixRank = QString::number(rankQM);
+    ui->lblQuadricFormMatrixRank->setText("Ранг матрицы квадрат. формы: "+QuadricFormMatrixRank);
 }

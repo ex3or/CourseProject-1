@@ -612,7 +612,7 @@
      <set>Qt::AlignCenter</set>
     </property>
    </widget>
-   <widget class="QLabel" name="lblSurfaceName_2">
+   <widget class="QLabel" name="lblQuadricFormMatrixRank">
     <property name="geometry">
      <rect>
       <x>960</x>
@@ -630,10 +630,10 @@
      <enum>QFrame::Box</enum>
     </property>
     <property name="text">
-     <string>Ранг квадратичной формы:</string>
+     <string>Ранг матрицы квадрат. формы:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lblSurfaceName_3">
+   <widget class="QLabel" name="lblFullMatrixRank">
     <property name="geometry">
      <rect>
       <x>960</x>
@@ -654,7 +654,7 @@
      <string>Ранг матрицы коэффициентов:</string>
     </property>
    </widget>
-   <widget class="QLabel" name="lblSurfaceName_4">
+   <widget class="QLabel" name="lblFullMatrixDet">
     <property name="geometry">
      <rect>
       <x>960</x>
