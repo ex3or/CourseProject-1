@@ -54,7 +54,7 @@
     <property name="geometry">
      <rect>
       <x>1000</x>
-      <y>110</y>
+      <y>90</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -81,7 +81,7 @@
     <property name="geometry">
      <rect>
       <x>1160</x>
-      <y>110</y>
+      <y>90</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -108,7 +108,7 @@
     <property name="geometry">
      <rect>
       <x>1000</x>
-      <y>150</y>
+      <y>130</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -135,7 +135,7 @@
     <property name="geometry">
      <rect>
       <x>1160</x>
-      <y>150</y>
+      <y>130</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -162,7 +162,7 @@
     <property name="geometry">
      <rect>
       <x>1000</x>
-      <y>190</y>
+      <y>170</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -189,7 +189,7 @@
     <property name="geometry">
      <rect>
       <x>1160</x>
-      <y>190</y>
+      <y>170</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -216,7 +216,7 @@
     <property name="geometry">
      <rect>
       <x>1000</x>
-      <y>230</y>
+      <y>210</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -243,7 +243,7 @@
     <property name="geometry">
      <rect>
       <x>1160</x>
-      <y>230</y>
+      <y>210</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -270,7 +270,7 @@
     <property name="geometry">
      <rect>
       <x>1070</x>
-      <y>270</y>
+      <y>250</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -300,7 +300,7 @@
     <property name="geometry">
      <rect>
       <x>1070</x>
-      <y>310</y>
+      <y>290</y>
       <width>110</width>
       <height>30</height>
      </rect>
@@ -330,14 +330,14 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>470</y>
+      <y>430</y>
       <width>311</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="frameShape">
@@ -351,7 +351,7 @@
     <property name="geometry">
      <rect>
       <x>1030</x>
-      <y>360</y>
+      <y>340</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -364,7 +364,7 @@
     <property name="geometry">
      <rect>
       <x>1030</x>
-      <y>400</y>
+      <y>380</y>
       <width>181</width>
       <height>30</height>
      </rect>
@@ -377,7 +377,7 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>440</y>
+      <y>410</y>
       <width>311</width>
       <height>20</height>
      </rect>
@@ -406,14 +406,14 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>110</y>
+      <y>90</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -427,14 +427,14 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>150</y>
+      <y>130</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -448,14 +448,14 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>190</y>
+      <y>170</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -469,14 +469,14 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>230</y>
+      <y>210</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -490,14 +490,14 @@
     <property name="geometry">
      <rect>
       <x>1120</x>
-      <y>110</y>
+      <y>90</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -511,14 +511,14 @@
     <property name="geometry">
      <rect>
       <x>1120</x>
-      <y>150</y>
+      <y>130</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -532,14 +532,14 @@
     <property name="geometry">
      <rect>
       <x>1120</x>
-      <y>190</y>
+      <y>170</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -553,14 +553,14 @@
     <property name="geometry">
      <rect>
       <x>1120</x>
-      <y>230</y>
+      <y>210</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -574,14 +574,14 @@
     <property name="geometry">
      <rect>
       <x>1030</x>
-      <y>270</y>
+      <y>250</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -595,14 +595,14 @@
     <property name="geometry">
      <rect>
       <x>1030</x>
-      <y>310</y>
+      <y>290</y>
       <width>30</width>
       <height>30</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>14</pointsize>
+      <pointsize>12</pointsize>
      </font>
     </property>
     <property name="text">
@@ -616,14 +616,14 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>510</y>
+      <y>470</y>
       <width>311</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="frameShape">
@@ -637,14 +637,14 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>550</y>
+      <y>510</y>
       <width>311</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="frameShape">
@@ -658,14 +658,14 @@
     <property name="geometry">
      <rect>
       <x>960</x>
-      <y>590</y>
+      <y>550</y>
       <width>311</width>
       <height>31</height>
      </rect>
     </property>
     <property name="font">
      <font>
-      <pointsize>10</pointsize>
+      <pointsize>9</pointsize>
      </font>
     </property>
     <property name="frameShape">
@@ -673,6 +673,84 @@
     </property>
     <property name="text">
      <string>Определитель матрицы коэфф.:</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_11">
+    <property name="geometry">
+     <rect>
+      <x>960</x>
+      <y>590</y>
+      <width>311</width>
+      <height>91</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string>&lt;html&gt;&lt;head/&gt;&lt;body&gt;&lt;p&gt;Корни характеристического уравнения:&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignHCenter|Qt::AlignTop</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblCEroot1">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>620</y>
+      <width>291</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>k1=</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblCEroot2">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>640</y>
+      <width>291</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>k2=</string>
+    </property>
+   </widget>
+   <widget class="QLabel" name="lblCEroot3">
+    <property name="geometry">
+     <rect>
+      <x>970</x>
+      <y>660</y>
+      <width>291</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>9</pointsize>
+     </font>
+    </property>
+    <property name="text">
+     <string>k3=</string>
     </property>
    </widget>
   </widget>
