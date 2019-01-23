@@ -714,7 +714,7 @@
      </font>
     </property>
     <property name="text">
-     <string>k1=</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="lblCEroot2">
@@ -732,7 +732,7 @@
      </font>
     </property>
     <property name="text">
-     <string>k2=</string>
+     <string/>
     </property>
    </widget>
    <widget class="QLabel" name="lblCEroot3">
@@ -750,7 +750,7 @@
      </font>
     </property>
     <property name="text">
-     <string>k3=</string>
+     <string/>
     </property>
    </widget>
   </widget>
