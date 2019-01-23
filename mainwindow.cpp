@@ -9,14 +9,15 @@
 #include "iostream"
 #include "complex"
 
-const double pi=3.14159;
+const double pi=3.14159265359;
 
 float IndexMatrix[4][4];
-bool Imaginary;
-long double det=0;
+
+double det=0;
 int rankQM=-1, rankIM=-1;
-long double ceroot1=-1,ceroot2=-1,ceroot3=-1;
+double ceroot1=-1,ceroot2=-1,ceroot3=-1;
 bool rootsoposits=false;
+
 
 QString root1=" ",root2=" ",root3=" ";
 
@@ -42,7 +43,7 @@ void MainWindow::on_btnAppMinimize_clicked()
     // to add minimization functionality
 }
 
-int sgn(long double value)
+int sgn(double value)
 {
     if (value<0) {return -1;}
     else if (value==0) {return 0;}
@@ -55,13 +56,25 @@ void CharacteristicEquasion()
     if (rankQM==3)
     {
 
-        long double a=0,b=0,c=0,d=0,f=0,q=0,r=0,s=0;
+        double a=0,b=0,c=0,d=0,f=0,q=0,r=0,s=0;
         float* A=&IndexMatrix[0][0];
         float* B=&IndexMatrix[1][1];
         float* C=&IndexMatrix[2][2];
         float* D=&IndexMatrix[0][1];
         float* E=&IndexMatrix[0][2];
         float* F=&IndexMatrix[1][2];
+
+        QString r1,r2,r3;
+
+
+        d=1;
+        a=-((*A)+(*B)+(*C));
+        b=((*A)*(*C)+(*B)*(*A)+(*B)*(*C)-pow((*E),2)-pow((*F),2)-pow((*D),2));
+        c=-((*A)*(*B)*(*C)+2*(*D)*(*F)*(*E)-(*B)*pow((*E),2)-(*A)*pow((*F),2)-(*C)*pow((*D),2));
+
+        q=(pow(a,2)-3*b)/9;
+        r=(2*pow(a,3)-9*a*b+27*c)/54;
+        s=pow(q,3)-pow(r,2);
 
         root1=" ";
         root2=" ";
@@ -70,31 +83,27 @@ void CharacteristicEquasion()
         ceroot2=-1;
         ceroot3=-1;
 
-
-        d=1;
-        a=-((*B)+(*C));
-        b=((*C)+(*B)+(*B)*(*C)-pow((*E),2)-pow((*F),2)-pow((*D),2));
-        c=-((*B)*(*C)+2*(*D)*(*F)*(*E)-(*B)*pow((*E),2)-pow((*F),2)-(*C)*pow((*D),2));
-
-        q=(pow(a,2)-3*b)/9;
-        r=(2*pow(a,3)-9*a*b+27*c)/54;
-        s=pow(q,3)-pow(r,2);
-
         if (s>0)
         {
+
             f=acos(r/pow(q,1.5))/3;
             ceroot1=-2*sqrt(q)*cos(f)-a/3;
-            ceroot2=-2*sqrt(q)*cos(f+2/3*pi)-a/3;
-            ceroot3=-2*sqrt(q)*cos(f-2/3*pi)-a/3;
+            ceroot2=-2*sqrt(q)*cos(f+(2*pi/3))-a/3;
+            ceroot3=-2*sqrt(q)*cos(f-(2*pi/3))-a/3;
+
 
             root1=QString::number((float)ceroot1);
             root2=QString::number((float)ceroot2);
             root3=QString::number((float)ceroot3);
 
+            r1=root1;
+            r2=root2;
+            r3=root3;
+
         } else
         if (s<0)
         {
-            float complexpart1,complexpart2;
+            double complexpart1,complexpart2;
 
             if (q>0)
                         {
@@ -102,12 +111,17 @@ void CharacteristicEquasion()
                             ceroot1=-2*sgn(r)*sqrt(q)*cosh(f)-a/3;
                             ceroot2=sgn(r)*sqrt(q)*cosh(f)-a/3;
                             ceroot3=ceroot2;
+
+
                             complexpart1=sqrt(3)*sqrt(abs(q))*sinh(f);
                             complexpart2=-complexpart1;
 
-                            root1=QString::number((float)ceroot1);
-                            root2=QString::number((float)ceroot2)+"+"+QString::number(complexpart1)+"i";
-                            root3=QString::number((float)ceroot3)+"-"+QString::number(-complexpart2)+"i";
+                            root1=QString::number(ceroot1);
+                            root2=QString::number(ceroot2)+"+"+QString::number(complexpart1)+"i";
+                            root3=QString::number(ceroot3)+"-"+QString::number(-complexpart2)+"i";
+                            r1=root1;
+                            r2=root2;
+                            r3=root3;
                         } else
                         if (q<0)
                         {
@@ -119,9 +133,12 @@ void CharacteristicEquasion()
                             complexpart1=sqrt(3)*sqrt(abs(q))*cosh(f);
                             complexpart2=-complexpart1;
 
-                            root1=QString::number((float)ceroot1);
-                            root2=QString::number((float)ceroot2)+"+"+QString::number(complexpart1)+"i";
-                            root3=QString::number((float)ceroot3)+"-"+QString::number(-complexpart2)+"i";
+                            root1=QString::number(ceroot1);
+                            root2=QString::number(ceroot2)+"+"+QString::number(complexpart1)+"i";
+                            root3=QString::number(ceroot3)+"-"+QString::number(-complexpart2)+"i";
+                            r1=root1;
+                            r2=root2;
+                            r3=root3;
                         } else
                         if (q==0)
                         {
@@ -132,9 +149,12 @@ void CharacteristicEquasion()
                             complexpart1=sqrt(abs((a-3*ceroot1)*(a+ceroot1)-4/b))/2;
                             complexpart2=-complexpart1;
 
-                            root1=QString::number((float)ceroot1);
-                            root2=QString::number((float)ceroot2)+"+"+QString::number(complexpart1)+"i";
-                            root3=QString::number((float)ceroot3)+"-"+QString::number(-complexpart2)+"i";
+                            root1=QString::number(ceroot1);
+                            root2=QString::number(ceroot2)+"+"+QString::number(complexpart1)+"i";
+                            root3=QString::number(ceroot3)+"-"+QString::number(-complexpart2)+"i";
+                            r1=root1;
+                            r2=root2;
+                            r3=root3;
 
                         }
         } else
@@ -143,16 +163,18 @@ void CharacteristicEquasion()
             ceroot1=-2*sgn(r)*sqrt(q)-a/3;
             ceroot2=sgn(r)*sqrt(q)-a/3;
 
-            root1=QString::number((float)ceroot1);
-            root2=QString::number((float)ceroot2);
+            root1=QString::number(ceroot1);
+            root2=QString::number(ceroot2);
+            r1=root1;
+            r2=root2;
+            r3=root3;
         }
 
 
 
 
-
-
     }
+
 
 }
 
