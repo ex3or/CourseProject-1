@@ -22,6 +22,16 @@ private slots:
 
     void on_btnExamine_clicked();
 
+    void on_editX2_textChanged(const QString &arg1);
+
+    void on_btnPreset1_clicked();
+
+    void on_btnPreset2_clicked();
+
+    void on_btnPreset3_clicked();
+
+    void on_btnClear_clicked();
+
 private:
     Ui::MainWindow *ui;
 };

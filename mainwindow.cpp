@@ -8,6 +8,7 @@
 #include "vector"
 #include "iostream"
 #include "complex"
+#include "cctype"
 
 const double pi=3.14159265359;
 
@@ -27,6 +28,8 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
+    ui->lblStatus->setText("Статус: Инициализация..");
+    ui->lblStatus->setText("Статус: Ожидание ввода данных..");
 }
 
 MainWindow::~MainWindow()
@@ -589,8 +592,12 @@ void MainWindow::on_btnExamine_clicked()
     IndexMatrix[2][3]/=2.0;
     IndexMatrix[3][2]/=2.0;
 
+    ui->lblStatus->setText("Статус: Обработка данных..");
+
     ExamineSurfaceType();
     OpenGLInit();
+
+    ui->lblStatus->setText("Статус: Ожидание действия..");
 
     QString FullMatrixDet = QString::number((float)det);
     ui->lblFullMatrixDet->setText("Определитель матрицы коэфф.: "+FullMatrixDet);
@@ -605,5 +612,75 @@ void MainWindow::on_btnExamine_clicked()
     ui->lblCEroot2->setText(root2);
     ui->lblCEroot3->setText(root3);
     BuildSurface();
+
+}
+
+void MainWindow::on_editX2_textChanged(const QString &arg1)
+{
+    //editinput limitation
+}
+
+void MainWindow::on_btnPreset1_clicked()
+{
+    ui->editX2->setText("1");
+    ui->editY2->setText("2");
+    ui->editZ2->setText("3");
+    ui->editXY->setText("-4");
+    ui->editXZ->setText("0");
+    ui->editYZ->setText("-4");
+    ui->editX->setText("0");
+    ui->editY->setText("0");
+    ui->editZ->setText("0");
+    ui->editD->setText("100");
+}
+
+void MainWindow::on_btnPreset2_clicked()
+{
+    ui->editX2->setText("5");
+    ui->editY2->setText("5");
+    ui->editZ2->setText("5");
+    ui->editXY->setText("0");
+    ui->editXZ->setText("0");
+    ui->editYZ->setText("0");
+    ui->editX->setText("1");
+    ui->editY->setText("2");
+    ui->editZ->setText("3");
+    ui->editD->setText("100");
+}
+
+void MainWindow::on_btnPreset3_clicked()
+{
+    ui->editX2->setText("2");
+    ui->editY2->setText("2");
+    ui->editZ2->setText("3");
+    ui->editXY->setText("4");
+    ui->editXZ->setText("2");
+    ui->editYZ->setText("2");
+    ui->editX->setText("-4");
+    ui->editY->setText("6");
+    ui->editZ->setText("-2");
+    ui->editD->setText("3");
+}
+
+void MainWindow::on_btnClear_clicked()
+{
+    ui->editX2->setText("");
+    ui->editY2->setText("");
+    ui->editZ2->setText("");
+    ui->editXY->setText("");
+    ui->editXZ->setText("");
+    ui->editYZ->setText("");
+    ui->editX->setText("");
+    ui->editY->setText("");
+    ui->editZ->setText("");
+    ui->editD->setText("");
+    ui->lblCEroot1->setText("");
+    ui->lblCEroot2->setText("");
+    ui->lblCEroot3->setText("");
+    ui->lblFullMatrixDet->setText("Определитель матрицы коэфф.: ");
+    ui->lblQuadricFormMatrixRank->setText("Ранг матрицы квадрат. формы: ");
+    ui->lblFullMatrixRank->setText("Ранг матрицы коэффициентов: ");
+    ui->lblSurfaceName->setText("Поверхность: ");
+    ui->lblStatus->setText("Статус: Ожидание ввода данных..");
 
 }

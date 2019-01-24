@@ -13,9 +13,6 @@
   <property name="windowTitle">
    <string>Second Order Surfaces</string>
   </property>
-  <property name="styleSheet">
-   <string notr="true">background-color: rgb(0, 0, 0);</string>
-  </property>
   <widget class="QWidget" name="centralWidget">
    <widget class="GLWidget" name="OGLWidget">
     <property name="geometry">
@@ -41,10 +38,6 @@
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -52,7 +45,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -72,10 +65,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -83,7 +72,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -103,10 +92,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -114,7 +99,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -134,10 +119,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -145,7 +126,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -165,10 +146,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -176,7 +153,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -196,10 +173,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -207,7 +180,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -227,10 +200,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -238,7 +207,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -258,10 +227,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -269,7 +234,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -289,10 +254,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -303,7 +264,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -323,10 +284,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>14</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
     <property name="inputMask">
      <string/>
     </property>
@@ -337,7 +294,7 @@ color: rgb(255, 255, 255);</string>
      <number>10</number>
     </property>
     <property name="frame">
-     <bool>true</bool>
+     <bool>false</bool>
     </property>
     <property name="clearButtonEnabled">
      <bool>true</bool>
@@ -357,10 +314,6 @@ color: rgb(255, 255, 255);</string>
       <pointsize>9</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(100, 100, 100, 100);</string>
-    </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
     </property>
@@ -371,67 +324,27 @@ background-color: rgb(100, 100, 100, 100);</string>
    <widget class="QPushButton" name="btnExamine">
     <property name="geometry">
      <rect>
-      <x>1010</x>
+      <x>1030</x>
       <y>370</y>
-      <width>221</width>
-      <height>33</height>
+      <width>181</width>
+      <height>30</height>
      </rect>
     </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100);
-color: rgb(255, 255, 255);
-border-color: rgb(0, 0, 255);</string>
-    </property>
     <property name="text">
-     <string>Проанализировать поверхность</string>
-    </property>
-    <property name="default">
-     <bool>true</bool>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
+     <string>Исследовать поверхность</string>
     </property>
    </widget>
    <widget class="QPushButton" name="btnBuild">
-    <property name="enabled">
-     <bool>false</bool>
-    </property>
     <property name="geometry">
      <rect>
       <x>1030</x>
       <y>410</y>
       <width>181</width>
-      <height>32</height>
+      <height>30</height>
      </rect>
-    </property>
-    <property name="cursor">
-     <cursorShape>PointingHandCursor</cursorShape>
-    </property>
-    <property name="autoFillBackground">
-     <bool>false</bool>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100, 150);
-border-color: rgb(0, 0, 255);
-color: rgb(200, 200 200);</string>
     </property>
     <property name="text">
      <string>Построить график</string>
-    </property>
-    <property name="autoDefault">
-     <bool>false</bool>
-    </property>
-    <property name="default">
-     <bool>true</bool>
-    </property>
-    <property name="flat">
-     <bool>false</bool>
     </property>
    </widget>
    <widget class="Line" name="line">
@@ -442,9 +355,6 @@ color: rgb(200, 200 200);</string>
       <width>311</width>
       <height>20</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="frameShadow">
      <enum>QFrame::Plain</enum>
@@ -461,12 +371,6 @@ color: rgb(200, 200 200);</string>
       <width>311</width>
       <height>20</height>
      </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
     </property>
     <property name="orientation">
      <enum>Qt::Horizontal</enum>
@@ -485,9 +389,6 @@ color: rgb(200, 200 200);</string>
      <font>
       <pointsize>12</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>x²</string>
@@ -510,9 +411,6 @@ color: rgb(200, 200 200);</string>
       <pointsize>12</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
     <property name="text">
      <string>y²</string>
     </property>
@@ -533,9 +431,6 @@ color: rgb(200, 200 200);</string>
      <font>
       <pointsize>12</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>z²</string>
@@ -558,9 +453,6 @@ color: rgb(200, 200 200);</string>
       <pointsize>12</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
     <property name="text">
      <string>xy</string>
     </property>
@@ -581,9 +473,6 @@ color: rgb(200, 200 200);</string>
      <font>
       <pointsize>12</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>x</string>
@@ -606,9 +495,6 @@ color: rgb(200, 200 200);</string>
       <pointsize>12</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
     <property name="text">
      <string>y</string>
     </property>
@@ -629,9 +515,6 @@ color: rgb(200, 200 200);</string>
      <font>
       <pointsize>12</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>z</string>
@@ -654,9 +537,6 @@ color: rgb(200, 200 200);</string>
       <pointsize>12</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
     <property name="text">
      <string>xz</string>
     </property>
@@ -677,9 +557,6 @@ color: rgb(200, 200 200);</string>
      <font>
       <pointsize>12</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
     </property>
     <property name="text">
      <string>yz</string>
@@ -702,9 +579,6 @@ color: rgb(200, 200 200);</string>
       <pointsize>12</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
     <property name="text">
      <string>D</string>
     </property>
@@ -725,10 +599,6 @@ color: rgb(200, 200 200);</string>
      <font>
       <pointsize>9</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(100, 100, 100, 100);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
@@ -751,10 +621,6 @@ background-color: rgb(100, 100, 100, 100);</string>
       <pointsize>9</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(100, 100, 100, 100);</string>
-    </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
     </property>
@@ -776,10 +642,6 @@ background-color: rgb(100, 100, 100, 100);</string>
       <pointsize>9</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(100, 100, 100, 100);</string>
-    </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
     </property>
@@ -800,10 +662,6 @@ background-color: rgb(100, 100, 100, 100);</string>
      <font>
       <pointsize>9</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(100, 100, 100, 100);</string>
     </property>
     <property name="frameShape">
      <enum>QFrame::Box</enum>
@@ -829,10 +687,6 @@ background-color: rgb(100, 100, 100, 100);</string>
       <pointsize>9</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);</string>
-    </property>
     <property name="text">
      <string/>
     </property>
@@ -850,10 +704,6 @@ background-color: rgba(255, 255, 255, 0);</string>
      <font>
       <pointsize>9</pointsize>
      </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);</string>
     </property>
     <property name="text">
      <string/>
@@ -873,176 +723,8 @@ background-color: rgba(255, 255, 255, 0);</string>
       <pointsize>9</pointsize>
      </font>
     </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgba(255, 255, 255, 0);</string>
-    </property>
     <property name="text">
      <string/>
-    </property>
-   </widget>
-   <widget class="QLabel" name="lblStatus">
-    <property name="geometry">
-     <rect>
-      <x>960</x>
-      <y>65</y>
-      <width>311</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="font">
-     <font>
-      <pointsize>10</pointsize>
-     </font>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);
-background-color: rgb(100, 100, 100, 100);</string>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::Panel</enum>
-    </property>
-    <property name="text">
-     <string>Статус:</string>
-    </property>
-   </widget>
-   <widget class="Line" name="line_3">
-    <property name="geometry">
-     <rect>
-      <x>960</x>
-      <y>40</y>
-      <width>311</width>
-      <height>20</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="frameShadow">
-     <enum>QFrame::Plain</enum>
-    </property>
-    <property name="orientation">
-     <enum>Qt::Horizontal</enum>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnZoomIn">
-    <property name="geometry">
-     <rect>
-      <x>970</x>
-      <y>10</y>
-      <width>30</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>+</string>
-    </property>
-    <property name="default">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnZoomOut">
-    <property name="geometry">
-     <rect>
-      <x>1010</x>
-      <y>10</y>
-      <width>30</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>-</string>
-    </property>
-    <property name="default">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnClear">
-    <property name="geometry">
-     <rect>
-      <x>1230</x>
-      <y>10</y>
-      <width>30</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>C</string>
-    </property>
-    <property name="default">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnPreset3">
-    <property name="geometry">
-     <rect>
-      <x>1190</x>
-      <y>10</y>
-      <width>30</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>3</string>
-    </property>
-    <property name="default">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnPreset2">
-    <property name="geometry">
-     <rect>
-      <x>1150</x>
-      <y>10</y>
-      <width>30</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>2</string>
-    </property>
-    <property name="default">
-     <bool>true</bool>
-    </property>
-   </widget>
-   <widget class="QPushButton" name="btnPreset1">
-    <property name="geometry">
-     <rect>
-      <x>1110</x>
-      <y>10</y>
-      <width>30</width>
-      <height>30</height>
-     </rect>
-    </property>
-    <property name="styleSheet">
-     <string notr="true">background-color: rgb(100, 100, 100);
-color: rgb(255, 255, 255);</string>
-    </property>
-    <property name="text">
-     <string>1</string>
-    </property>
-    <property name="default">
-     <bool>true</bool>
     </property>
    </widget>
   </widget>
