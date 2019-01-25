@@ -9,16 +9,30 @@
 #include "iostream"
 #include "complex"
 #include "cctype"
+#include <QRegExpValidator>
+#include <gl/freeglut.h>
+#include <gl/glut.h>
+#include <QCloseEvent>
 
 const double pi=3.14159265359;
 
 float IndexMatrix[4][4];
+
+extern float scalemultiplier;
+extern void updatedisplay();
+extern void hyperboloid2();
+
+extern float angle_x,angle_y,angle_z;
+
+int mainwindowpos_x,mainwindowpos_y;
+int mainwindow_w,mainwindow_h;
 
 double det=0;
 int rankQM=-1, rankIM=-1;
 double ceroot1=-1,ceroot2=-1,ceroot3=-1;
 bool rootsopositsigns=false;
 bool imaginary=false;
+int type=0;
 
 
 QString root1=" ",root2=" ",root3=" ",ftype="";
@@ -30,6 +44,25 @@ MainWindow::MainWindow(QWidget *parent) :
     ui->setupUi(this);
     ui->lblStatus->setText("Статус: Инициализация..");
     ui->lblStatus->setText("Статус: Ожидание ввода данных..");
+
+    QRegExp rx("-?\\d{1,4}\\.\\d{1,4}");
+    QRegExpValidator v(rx,0);
+    QValidator *validator = new QRegExpValidator(rx,this);
+    //QValidator *validator = new QDoubleValidator;
+    ui->editX2->setValidator(validator);
+    ui->editY2->setValidator(validator);
+    ui->editZ2->setValidator(validator);
+    ui->editXY->setValidator(validator);
+    ui->editYZ->setValidator(validator);
+    ui->editXZ->setValidator(validator);
+    ui->editX->setValidator(validator);
+    ui->editY->setValidator(validator);
+    ui->editZ->setValidator(validator);
+    ui->editD->setValidator(validator);
+    ui->lblScale->setText("Масштаб: 1/"+QString::number(scalemultiplier));
+    ui->lblOxAngle->setText("Угол: "+QString::number(angle_x*360));
+    ui->lblOyAngle->setText("Угол: "+QString::number(angle_y*360));
+    ui->lblOzAngle->setText("Угол: "+QString::number(angle_z*360));
 }
 
 MainWindow::~MainWindow()
@@ -37,15 +70,6 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::on_btnAppTerminate_clicked()
-{
-    exit(0);
-}
-
-void MainWindow::on_btnAppMinimize_clicked()
-{
-    // to add minimization functionality
-}
 
 int sgn(double value)
 {
@@ -339,8 +363,21 @@ void CharacteristicEquasion()
 float ExamineSurfaceType()
 {
     float a[4][4];
-    int type=0;
+
     double detp1=0, detp2=0, detp3=0, detp4=0;
+
+    float *A = &IndexMatrix[0][0];
+    float *B = &IndexMatrix[1][1];
+    float *C = &IndexMatrix[2][2];
+    float *D = &IndexMatrix[3][3];
+    float *E = &IndexMatrix[0][1];
+    float *F = &IndexMatrix[0][2];
+    float *G = &IndexMatrix[1][2];
+    float *M = &IndexMatrix[0][3];
+    float *N = &IndexMatrix[1][3];
+    float *P = &IndexMatrix[2][3];
+
+
 
     rootsopositsigns=false;
     rankQM=-1;
@@ -355,13 +392,18 @@ float ExamineSurfaceType()
         }
     }
     // Determinant
-    detp1=a[1][1]*a[2][2]*a[3][3]+a[2][1]*a[1][3]*a[3][2]+a[1][2]*a[2][3]*a[3][1]-a[3][1]*a[2][2]*a[1][3]-a[3][2]*a[2][3]*a[1][1]-a[2][1]*a[1][2]*a[3][3];
-    detp2=a[1][0]*a[2][2]*a[3][3]+a[2][0]*a[3][2]*a[1][3]+a[1][2]*a[2][3]*a[3][0]-a[3][0]*a[2][2]*a[1][3]-a[2][0]*a[1][2]*a[3][3]-a[1][0]*a[3][2]*a[2][3];
-    detp3=a[1][0]*a[2][1]*a[3][3]+a[2][0]*a[3][1]*a[1][3]+a[1][1]*a[2][3]*a[3][0]-a[3][0]*a[2][1]*a[1][3]-a[2][0]*a[1][1]*a[3][3]-a[3][1]*a[2][3]*a[1][0];
-    detp4=a[1][0]*a[2][1]*a[3][3]+a[2][0]*a[3][1]*a[1][2]+a[1][1]*a[2][2]*a[3][0]-a[3][0]*a[2][1]*a[1][2]-a[3][1]*a[2][2]*a[1][0]-a[2][0]*a[1][1]*a[3][2];
+    //detp1=a[1][1]*a[2][2]*a[3][3]+a[2][1]*a[1][3]*a[3][2]+a[1][2]*a[2][3]*a[3][1]-a[3][1]*a[2][2]*a[1][3]-a[3][2]*a[2][3]*a[1][1]-a[2][1]*a[1][2]*a[3][3];
+    //detp2=a[1][0]*a[2][2]*a[3][3]+a[2][0]*a[3][2]*a[1][3]+a[1][2]*a[2][3]*a[3][0]-a[3][0]*a[2][2]*a[1][3]-a[2][0]*a[1][2]*a[3][3]-a[1][0]*a[3][2]*a[2][3];
+    //detp3=a[1][0]*a[2][1]*a[3][3]+a[2][0]*a[3][1]*a[1][3]+a[1][1]*a[2][3]*a[3][0]-a[3][0]*a[2][1]*a[1][3]-a[2][0]*a[1][1]*a[3][3]-a[3][1]*a[2][3]*a[1][0];
+    //detp4=a[1][0]*a[2][1]*a[3][3]+a[2][0]*a[3][1]*a[1][2]+a[1][1]*a[2][2]*a[3][0]-a[3][0]*a[2][1]*a[1][2]-a[3][1]*a[2][2]*a[1][0]-a[2][0]*a[1][1]*a[3][2];
 
-    det=a[0][0]*detp1-a[0][1]*detp2+a[0][2]*detp3-a[0][3]*detp4;
+    detp1=(*E)*(*G)*(*P) + (*B)*(*C)*(*M) + (*F)*(*N)*(*G) - (*G)*(*G)*(*M) - (*C)*(*N)*(*E) - (*B)*(*F)*(*P);
+    detp2=(*A)*(*G)*(*P) + (*E)*(*C)*(*M) + (*F)*(*F)*(*N) - (*F)*(*G)*(*M) - (*A)*(*C)*(*N) - (*E)*(*F)*(*P);
+    detp3=(*A)*(*B)*(*P) + (*E)*(*G)*(*M) + (*E)*(*F)*(*N) - (*F)*(*B)*(*M) - (*E)*(*E)*(*P) - (*G)*(*N)*(*A);
+    detp4=(*A)*(*B)*(*C) + (*E)*(*F)*(*G) + (*E)*(*F)*(*G) - (*F)*(*F)*(*B) - (*G)*(*G)*(*A) - (*E)*(*E)*(*C);
 
+    //det=a[0][0]*detp1-a[0][1]*detp2+a[0][2]*detp3-a[0][3]*detp4;
+    det=-(*M)*detp1+(*N)*detp2-(*P)*detp3+(*D)*detp4;
 
     bool f=false;
 
@@ -401,8 +443,6 @@ float ExamineSurfaceType()
         if (f)
         {
             f=false;
-
-
             for (int i1=0; i1<4; i1++)
             {
                 for (int i2=0; i2<4; i2++)
@@ -431,8 +471,8 @@ float ExamineSurfaceType()
         }
     }
         //Quadric matrix rank
-        float mindet=0;
-        mindet=(a[0][0]*a[1][1]*a[2][2]+a[1][0]*a[2][1]*a[0][2]+a[0][1]*a[1][2]*a[2][0]-a[2][0]*a[1][1]*a[0][2]-a[0][0]*a[2][1]*a[1][2]-a[2][2]*a[1][0]*a[0][1]);
+        float mindet=detp4;
+        //mindet=(a[0][0]*a[1][1]*a[2][2]+a[1][0]*a[2][1]*a[0][2]+a[0][1]*a[1][2]*a[2][0]-a[2][0]*a[1][1]*a[0][2]-a[0][0]*a[2][1]*a[1][2]-a[2][2]*a[1][0]*a[0][1]);
         if (mindet!=0) {rankQM=3;} else
         {
         f=false;
@@ -542,18 +582,6 @@ float ExamineSurfaceType()
     return type;
 }
 
-void OpenGLInit()
-{
-
-}
-
-void BuildSurface()
-{
-
-
-
-}
-
 
 
 
@@ -563,6 +591,7 @@ void BuildSurface()
 
 void MainWindow::on_btnExamine_clicked()
 {
+    mousePressEvent(NULL);
     IndexMatrix[0][0]=ui->editX2->text().toFloat();
     IndexMatrix[1][1]=ui->editY2->text().toFloat();
     IndexMatrix[2][2]=ui->editZ2->text().toFloat();
@@ -594,8 +623,12 @@ void MainWindow::on_btnExamine_clicked()
 
     ui->lblStatus->setText("Статус: Обработка данных..");
 
+
+
+
+
+
     ExamineSurfaceType();
-    OpenGLInit();
 
     ui->lblStatus->setText("Статус: Ожидание действия..");
 
@@ -611,7 +644,7 @@ void MainWindow::on_btnExamine_clicked()
     ui->lblCEroot1->setText(root1);
     ui->lblCEroot2->setText(root2);
     ui->lblCEroot3->setText(root3);
-    BuildSurface();
+
 
 }
 
@@ -632,6 +665,7 @@ void MainWindow::on_btnPreset1_clicked()
     ui->editY->setText("0");
     ui->editZ->setText("0");
     ui->editD->setText("100");
+    mousePressEvent(NULL);
 }
 
 void MainWindow::on_btnPreset2_clicked()
@@ -646,6 +680,7 @@ void MainWindow::on_btnPreset2_clicked()
     ui->editY->setText("2");
     ui->editZ->setText("3");
     ui->editD->setText("100");
+    mousePressEvent(NULL);
 }
 
 void MainWindow::on_btnPreset3_clicked()
@@ -660,6 +695,7 @@ void MainWindow::on_btnPreset3_clicked()
     ui->editY->setText("6");
     ui->editZ->setText("-2");
     ui->editD->setText("3");
+    mousePressEvent(NULL);
 }
 
 void MainWindow::on_btnClear_clicked()
@@ -682,5 +718,66 @@ void MainWindow::on_btnClear_clicked()
     ui->lblFullMatrixRank->setText("Ранг матрицы коэффициентов: ");
     ui->lblSurfaceName->setText("Поверхность: ");
     ui->lblStatus->setText("Статус: Ожидание ввода данных..");
+    mousePressEvent(NULL);
 
+}
+
+void MainWindow::mousePressEvent(QMouseEvent *event)
+{
+    HWND hwnd = FindWindowA( "GLUT", "Graph" );
+    SetActiveWindow(hwnd);
+}
+
+void MainWindow::mouseReleaseEvent(QMouseEvent *event)
+{
+    HWND hwnd = FindWindowA( "GLUT", "Graph" );
+    SetActiveWindow(hwnd);
+}
+
+void MainWindow::closeEvent(QCloseEvent *event)
+{
+    glutExit();
+}
+
+void MainWindow::on_btnZoomIn_clicked()
+{
+    scalemultiplier+=0.5;
+    updatedisplay();
+    ui->lblScale->setText("Масштаб: 1/"+QString::number(scalemultiplier));
+
+}
+
+void MainWindow::on_btnZoomOut_clicked()
+{
+    if (scalemultiplier>0.5){scalemultiplier-=0.5;}
+    updatedisplay();
+    ui->lblScale->setText("Масштаб: 1/"+QString::number(scalemultiplier));
+}
+
+void MainWindow::on_sliderOX_sliderMoved(int position)
+{
+    angle_x=ui->sliderOX->value()/90.0001;
+    ui->lblOxAngle->setText("Угол: "+QString::number(position));
+    updatedisplay();
+}
+
+void MainWindow::on_sliderOY_sliderMoved(int position)
+{
+    angle_y=ui->sliderOY->value()/90.0001;
+    ui->lblOyAngle->setText("Угол: "+QString::number(position));
+    updatedisplay();
+}
+
+void MainWindow::on_sliderOZ_sliderMoved(int position)
+{
+    angle_z=ui->sliderOZ->value()/90.0001;
+    ui->lblOzAngle->setText("Угол: "+QString::number(position));
+    updatedisplay();
+}
+
+void MainWindow::on_btnBuild_clicked()
+{
+    on_btnExamine_clicked();
+    updatedisplay();
+    hyperboloid2();
 }

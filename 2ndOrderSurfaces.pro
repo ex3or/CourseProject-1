@@ -36,6 +36,8 @@ HEADERS += \
 FORMS += \
         mainwindow.ui
 
+LIBS += -lglut
+
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
